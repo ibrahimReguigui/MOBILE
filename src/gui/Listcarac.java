@@ -9,6 +9,7 @@ import com.codename1.components.SpanLabel;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import services.ServiceCourSalle;
+import static services.ServiceCourSalle.instance;
 
 /**
  *
@@ -16,6 +17,7 @@ import services.ServiceCourSalle;
  */
 public class Listcarac extends Form{
      Form current;
+     
     public Listcarac(Form previous) {
           
         getTitleArea().setUIID("Container");

@@ -6,6 +6,7 @@
 package gui;
 
 import com.codename1.ui.Button;
+import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
@@ -26,6 +27,7 @@ public class caracForm extends Form{
         Button btnAddCaracteristiquesportif = new Button("Add Caracteristiquesportif");
         Button btnListCaracteristiquesportif = new Button("List Caracteristiquesportif");
         
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
         btnAddCaracteristiquesportif.addActionListener(e-> {new addcarac( previous).show();});
         btnListCaracteristiquesportif.addActionListener(e-> {new Listcarac( previous).show();});
         addAll(btnAddCaracteristiquesportif,btnListCaracteristiquesportif);

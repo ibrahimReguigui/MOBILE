@@ -51,7 +51,6 @@ import utils.Statics;
 public class ListeCourSalleForm extends Form {
 
     TextField email;
-    private int cpt = 0;
     Form current;
 
     /*Garder traçe de la Form en cours pour la passer en paramètres 
@@ -99,7 +98,7 @@ public class ListeCourSalleForm extends Form {
                     dig.dispose();
                 }
             });
-
+            
         }
 
         Button btnAjouter = new Button("Ajouter");

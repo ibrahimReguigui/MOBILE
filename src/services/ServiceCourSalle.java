@@ -252,8 +252,7 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
     }
     
     
-        
-     public ArrayList<Caracteristiquesportif> parseCaracteristiquesportif(String jsonText) {
+    public ArrayList<Caracteristiquesportif> parseCaracteristiquesportif(String jsonText) {
         try {
             caracteristiquesportifs = new ArrayList<>();
             JSONParser j = new JSONParser();
@@ -323,16 +322,14 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
         NetworkManager.getInstance().addToQueueAndWait(req);
         return caracteristiquesportifs;
     }
-
     
     ////////////////////////////////////////////////////////////////////////////////////////////
     
-    public boolean addCaracteristiquesportif(Caracteristiquesportif c) {
+public boolean addCaracteristiquesportif(Caracteristiquesportif c) {
         System.out.println(c);
-        System.out.println("********");
+        System.out.println("******");
        //String url = Statics.BASE_URL + "create?name=" + t.getTailleSportif() + "&status=" + t.getStatus();
-       String url = Statics.BASE_URL + "AddCaracteristiquesportif?taille="+c.getTailleSportif() +"&poid=" +c.getPoidSportif()+"&age=" +c.getAgeSportif()+"&sexe=" +c.getSexe()+"&"
-               + "" +c.getObjectifNutrition();
+       String url = Statics.BASE_URL + "AddCaracteristiquesportif?taille="+c.getTailleSportif() +"&poid=" +c.getPoidSportif()+"&age=" +c.getAgeSportif()+"&sexe=" +c.getSexe()+"&objectifNutrition=" +c.getObjectifNutrition();
     
        req.setUrl(url);
        

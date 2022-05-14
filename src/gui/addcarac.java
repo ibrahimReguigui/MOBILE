@@ -46,6 +46,7 @@ public class addcarac extends Form{
         
         
         
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
         
         
         Button btnValider = new Button("Consulter resultat");
@@ -69,9 +70,9 @@ public class addcarac extends Form{
                         }
                         
                             if (objectifNutrition.getSelectedIndex() == 0) {
-                            c.setObjectifNutrition("Gain de poid");
+                            c.setObjectifNutrition("Gain_de_poid");
                         }   else {
-                            c.setObjectifNutrition("Pert de poid");
+                            c.setObjectifNutrition("Pert_de_poid");
                         }
                         
                         

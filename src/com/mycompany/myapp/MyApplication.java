@@ -12,6 +12,7 @@ import com.codename1.io.Log;
 import com.codename1.ui.Toolbar;
 import java.io.IOException;
 import com.codename1.ui.layouts.BoxLayout;
+import gui.EventForm;
 import gui.ListeCourSalleForm;
 
 /**
@@ -56,7 +57,8 @@ public class MyApplication {
 //        hi.show();
         
 //        new WalkthruForm(theme).show();
-        new ListeCourSalleForm(theme).show();
+//        new ListeCourSalleForm(theme).show();
+new EventForm(theme).show();
     }
 
     public void stop() {
