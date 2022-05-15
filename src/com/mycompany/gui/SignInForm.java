@@ -1,6 +1,6 @@
 package com.mycompany.gui;
 
-import com.codename1.components.FloatingHint;
+import com.codename1.components.FloatingHint; 
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
@@ -14,10 +14,18 @@ import com.codename1.ui.util.Resources;
 import com.mycomany.services.UserService;
 
 public class SignInForm extends BaseForm{
+	
+	public static Form current;
 
 	
 	 public SignInForm(Resources res) {
+		 
+		 
 	        super(new BorderLayout());
+			 current = this;
+
+	        
+	        setTitle("connectez-vous pour continuer !");
 	        
 	        if(!Display.getInstance().isTablet()) {
 	            BorderLayout bl = (BorderLayout)getLayout();
@@ -35,7 +43,7 @@ public class SignInForm extends BaseForm{
 	        username.setSingleLineTextArea(false);
 	        password.setSingleLineTextArea(false);
 	        Button signIn = new Button("Sign In");
-	        Button signUp = new Button("Sign Up");
+	        Button signUp = new Button("Vous n'avez aucune compte?");
 	        
 	        //mp oublié
 	        Button  mp = new Button("oublier mot de passe?","CenterLabel");
@@ -43,11 +51,13 @@ public class SignInForm extends BaseForm{
 	        
 	        signUp.addActionListener(e -> new signUpForm(res).show());
 	        signUp.setUIID("Link");
-	        Label doneHaveAnAccount = new Label("Vous n'avez aucune compte?");
+	       // Label doneHaveAnAccount = new Label("Vous n'avez aucune compte?");
 	        
 	        
 	        
-	        
+	        signUp.addActionListener(l->{
+	        	new signUpForm(res).show();
+	        });
 	        
 	        
 	        Container content = BoxLayout.encloseY(
@@ -56,7 +66,7 @@ public class SignInForm extends BaseForm{
 	                new FloatingHint(password),
 	                createLineSeparator(),
 	                signIn,
-	                FlowLayout.encloseCenter(doneHaveAnAccount, signUp),mp
+	                FlowLayout.encloseCenter(signUp),mp
 	        );
 	        content.setScrollableY(true);
 	        add(BorderLayout.SOUTH, content);

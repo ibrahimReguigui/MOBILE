@@ -12,9 +12,18 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 
 import com.mycompany.entities.User;
+import com.mycompany.gui.CoachHomeForm;
+import com.mycompany.gui.GérantHomeForm;
+import com.mycompany.gui.Home2;
 import com.mycompany.gui.HomeForm;
+import com.mycompany.gui.ListUsersForm;
+import com.mycompany.gui.RécapPasswordForm;
+import com.mycompany.gui.SessionManager;
+import com.mycompany.gui.SignInForm;
+import com.mycompany.gui.SportifHomeForm;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
@@ -53,53 +62,54 @@ public class UserService {
 	}
 	
 	
-	public void ajoutUser(User user) {
-		
-		
-		
-		
-	}
+	
+	
+	
+	
+	
+	
 	
 	
 	public ArrayList<User> parseUsers(String jsonText){
 		
-				try {
-					users = new ArrayList<>();
-					JSONParser j = new JSONParser();
-					Map<String,Object> mapusers = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
-					System.out.println(mapusers+"------------------------------map users");
-					List<Map<String,Object>> listOfMaps = (List<Map<String,Object>>) mapusers.get("root");
-					System.out.println("-------------------listofmaps"+listOfMaps);
-					for(Map<String,Object> obj : listOfMaps) {
-						User user  ;  
-						float id = Float.parseFloat(obj.get("id").toString());
-						String nom = obj.get("nom").toString();
-						String prenom = obj.get("prenom").toString();
-						String adresse = obj.get("adresse").toString();
-						String numTel = obj.get("numTel").toString();
-						String password = obj.get("password").toString();
-						String mailAdress = obj.get("mailAdress").toString();
-						//Date dateNaissance = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(obj.get("dateNaissance").toString()); 
-						String whoami = obj.get("whoami").toString();
-					//	String blocRaison = obj.get("blocRaison").toString();
-					//	Date unbloc = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(obj.get("unbloc").toString()); 
-						String image = obj.get("image").toString();
-					//	Boolean isconnected = Boolean.valueOf(obj.get("isconnected").toString());
-					//	String nbsignal = obj.get("nbsignal").toString();
-						user = new User((int)id, nom, prenom, adresse, numTel, password, mailAdress, null, whoami, null, null, image, false,null);
-						users.add(user);
-					}
-				}catch(Exception e){
-					e.printStackTrace();
-				}
-				
-				
-		return users;
-	}
+		try {
+			users = new ArrayList<>();
+			JSONParser j = new JSONParser();
+			Map<String,Object> mapusers = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+			System.out.println(mapusers+"------------------------------map users");
+			List<Map<String,Object>> listOfMaps = (List<Map<String,Object>>) mapusers.get("root");
+			System.out.println("-------------------listofmaps"+listOfMaps);
+			for(Map<String,Object> obj : listOfMaps) {
+				User user  ;  
+				float id = Float.parseFloat(obj.get("id").toString());
+				String nom = obj.get("nom").toString();
+				String prenom = obj.get("prenom").toString();
+				String adresse = obj.get("adresse").toString();
+				String numTel = obj.get("numTel").toString();
+				String password = obj.get("password").toString();
+				String mailAdress = obj.get("mailAdress").toString();
+				//Date dateNaissance = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(obj.get("dateNaissance").toString()); 
+				String whoami = obj.get("whoami").toString();
+			//	String blocRaison = obj.get("blocRaison").toString();
+			//	Date unbloc = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(obj.get("unbloc").toString()); 
+				String image = obj.get("image").toString();
+			//	Boolean isconnected = Boolean.valueOf(obj.get("isconnected").toString());
+			//	String nbsignal = obj.get("nbsignal").toString();
+				user = new User((int)id, nom, prenom, adresse, numTel, password, mailAdress, null, whoami, null, null, image, false,null);
+				users.add(user);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+return users;
+}
+
 	
 	
 	
-	
+
 	
 	public ArrayList<User> getAllUsers(){
 		
@@ -118,7 +128,6 @@ public class UserService {
 
 		return users;
 	}
-	
 	
 	
 	
@@ -165,25 +174,13 @@ public class UserService {
 	  public boolean addUser(User p) {
 	        System.out.println(p.toString());
 	        System.out.println("********");
-	        String url = Statics.BASE_URL + "/user/new";
+	        String url = Statics.BASE_URL + "/user/signup?nom="+p.getNom()+"&prenom="+p.getPrenom()+"&adresse="+p.getAdresse()+"&numTel="+p.getNumTel()+"&password="+p.getPassword()+"&mailAdress="+p.getMailAdress()+"&whoami="+p.getWhoami();
 
 	        req.setUrl(url);
 
-	        req.addArgument("nom", p.getNom()+ "");
-	        req.addArgument("prenom", p.getPrenom() + "");
-	        req.addArgument("adresse", p.getAdresse() + "");
-	        req.addArgument("numTel", p.getNumTel()+"");
-	        req.addArgument("password", p.getPassword()+"");
-	        req.addArgument("mailAdress", p.getMailAdress()+"");
-	        req.addArgument("dateNaissance", p.getDateNaissance().toString());
-	        req.addArgument("whoami", p.getWhoami());
-	        req.addArgument("blocRaison", p.getBlocRaison() );
-	        req.addArgument("unbloc", p.getUnbloc().toString()) ;
-	        req.addArgument("image", p.getImage() );
-	       // req.addArgument("isconnected", p.getis );
-	        req.addArgument("nbsignal", p.getNbsignal().toString() );
+	      
 
-
+	        
 
 	        req.addResponseListener(new ActionListener<NetworkEvent>() {
 	            @Override
@@ -196,7 +193,27 @@ public class UserService {
 	        return resultOK;
 	    }
 	
-	
+	  
+	  public boolean edituser(User p) {
+	        System.out.println(p.toString());
+	        System.out.println("********");
+	        String url = Statics.BASE_URL + "/edit/user/"+p.getId()+"?nom="+p.getNom()+"&prenom="+p.getPrenom()+"&adresse="+p.getAdresse()+"&numTel="+p.getNumTel()+"&password="+p.getPassword()+"&mailAdress="+p.getMailAdress()+"&whoami="+p.getWhoami()+"&blocRaison="+p.getBlocRaison();
+
+	        req.setUrl(url);
+
+	      
+
+
+	        req.addResponseListener(new ActionListener<NetworkEvent>() {
+	            @Override
+	            public void actionPerformed(NetworkEvent evt) {
+	                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+	                req.removeResponseListener(this);
+	            }
+	        });
+	        NetworkManager.getInstance().addToQueueAndWait(req);
+	        return resultOK;
+	    }
 	
 	  
 	  
@@ -228,10 +245,13 @@ public class UserService {
 	  //SignIn
 	    
 	    public void signin(TextField username,TextField password, Resources rs ) {
+	    	
+	    	
+	    	
 			users = new ArrayList<>();
 
 	    	
-	        String url = Statics.BASE_URL+"/user/signin?mailAdress="+username.getText()+"&password="+password.getText();
+	        String url = Statics.BASE_URL+"/signin/user?mailAdress="+username.getText()+"&password="+password.getText();
 	        req = new ConnectionRequest(url, false); //false ya3ni url mazlt matba3thtich lel server
 	        req.setUrl(url);
 	        
@@ -254,29 +274,55 @@ public class UserService {
 	            	 System.out.println("data =="+json);
 		                
 		                Map<String,Object> user = j.parseJSON(new CharArrayReader(json.toCharArray()));
-		                if(user.size() >0 ) // l9a user
+		                if(user.size() >0 ) { // l9a user
 		                	System.out.println("usserrrr "+user);
 		    		
-				               // new ListReclamationForm(rs).show();//yemchi lel list reclamation
-			                    new HomeForm().show();
+				             //tester s'il est signalé
+		                	if(Float.parseFloat(user.get("nbsignal").toString())>3  ) {
+		    	                Dialog.show("Echec d'authentification","Vous êtes signalé(e) !","OK",null);
+
+		                	}else if(user.get("blocRaison")!=null) {
+		    	                Dialog.show("Echec d'authentification","Vous êtes bloqué(e) !","OK",null);
+
+		                	}
+		                	
+		                	
+		                	
+		                	
+		                	else {
+		                	
+			                    
 			                    
 			                  
-//	                //Session 
-//	                float id = Float.parseFloat(user.get("id").toString());
-//	                SessionManager.setId((int)id);//jibt id ta3 user ly3ml login w sajltha fi session ta3i
-//	                
-//	                SessionManager.setPassowrd(user.get("password").toString());
-//	                SessionManager.setUserName(user.get("username").toString());
-//	                SessionManager.setEmail(user.get("email").toString());
-//	                
-//	                //photo 
-//	                
-//	                if(user.get("photo") != null)
-//	                    SessionManager.setPhoto(user.get("photo").toString());
-//	                
-//	                
+////	                //Session 
+	                float id = Float.parseFloat(user.get("id").toString());
+	                SessionManager.setId((int)id);//jibt id ta3 user ly3ml login w sajltha fi session ta3i
+	                
+	                SessionManager.setPassowrd(user.get("password").toString());
+	                SessionManager.setUserName(user.get("nom").toString());
+	                SessionManager.setEmail(user.get("mailAdress").toString());
+	                SessionManager.setWhoami(user.get("whoami").toString());
+	                
+	                
+	                if(SessionManager.getWhoami().equals("Sportif")) {
+	                	new SportifHomeForm().show();
+	                }else if(SessionManager.getWhoami().equals("Coach")) {
+	                	new CoachHomeForm().show();
+	                }else if(SessionManager.getWhoami().equals("Administrateur")) {
+	                	new Home2(rs).show();
+	                }else  {
+	                	new GérantHomeForm().show();
+	                } 
+	                
+		                	}
+	               // new Home2(rs).show();
+	                
+	            //    if(user.get("photo") != null)
+	              //      SessionManager.setPhoto(user.get("photo").toString());
+	                
+	                System.out.println("from session :"+SessionManager.getEmail());
 	              
-	            }
+		                } }
 	            }catch(Exception ex) {
 	                ex.printStackTrace();
 	            }
@@ -302,7 +348,7 @@ public class UserService {
 	     
 	        
 	        String url = Statics.BASE_URL+"/user/signup?nom="+name.getText().toString()+"&prenom="+prenom.getText().toString()+
-	                "&adresse="+adresse.getText().toString()+"&numTel="+numTel.getText().toString()+"&mailAdress="+mailAdress.getText().toString()
+	                "&adresse="+adresse.getText().toString()+"&numTel="+numTel.getText().toString()+"&password="+password.getText().toString()+"&mailAdress="+mailAdress.getText().toString()
 	                +"&whoami="+whoami.getText().toString();
 	        
 	        req.setUrl(url);
@@ -340,49 +386,6 @@ public class UserService {
 	    
 	    
 
-	  //heki 5dmtha taw nhabtha ala description
-//	    public String getPasswordByEmail(String email, Resources rs ) {
-//	        
-//	        
-//	        String url = Statics.BASE_URL+"/user/getPasswordByEmail?email="+email;
-//	        req = new ConnectionRequest(url, false); //false ya3ni url mazlt matba3thtich lel server
-//	        req.setUrl(url);
-//	        
-//	        req.addResponseListener((e) ->{
-//	            
-//	            JSONParser j = new JSONParser();
-//	            
-//	             json = new String(req.getResponseData()) + "";
-//	            
-//	            
-//	            try {
-//	            
-//	          
-//	                System.out.println("data =="+json);
-//	                
-//	                Map<String,Object> password = j.parseJSON(new CharArrayReader(json.toCharArray()));
-//	                
-//	                
-//	            
-//	            
-//	            }catch(Exception ex) {
-//	                ex.printStackTrace();
-//	            }
-//	            
-//	            
-//	            
-//	        });
-//	    
-//	         //ba3d execution ta3 requete ely heya url nestanaw response ta3 server.
-//	        NetworkManager.getInstance().addToQueueAndWait(req);
-//	    return json;
-//	    }
-//	  
-//	  
-//	  
-	  
-	  
-	  
 	  
 
 public void sendMail(String mailadress) {
@@ -443,8 +446,133 @@ protected PasswordAuthentication getPasswordAuthentication() {
    }
 	}
 
+
+
+public boolean signaluser(int id) {
+      String url = Statics.BASE_URL + "/signal/user/"+id  ;
+
+      req.setUrl(url);
+
+      req.addResponseListener(new ActionListener<NetworkEvent>() {
+          @Override
+          public void actionPerformed(NetworkEvent evt) {
+
+              req.removeResponseCodeListener(this);
+          }
+      });
+
+      NetworkManager.getInstance().addToQueueAndWait(req);
+      return resultOK;
+  }
+
+
+public boolean blockuser(int id) {
+    String url = Statics.BASE_URL + "/block/user/"+id  ;
+
+    req.setUrl(url);
+
+    req.addResponseListener(new ActionListener<NetworkEvent>() {
+        @Override
+        public void actionPerformed(NetworkEvent evt) {
+
+            req.removeResponseCodeListener(this);
+        }
+    });
+
+    NetworkManager.getInstance().addToQueueAndWait(req);
+    return resultOK;
+}
+
+
+
+
+
+
+
+
+
+
+public User getForgottenuser(String email, Resources rs ) {
+	
+	
+	
+	users = new ArrayList<>();
+User récapuser = new User();
+	
+    String url = Statics.BASE_URL+"/reset/getone/"+email;
+    req = new ConnectionRequest(url, false); //false ya3ni url mazlt matba3thtich lel server
+    req.setUrl(url);
+    
+    req.addResponseListener((e) ->{
+        
+        JSONParser j = new JSONParser();
+        
+        String json = new String(req.getResponseData()) + "";
+        
+        
+        try {
+        
+        if(json.equals("failed")) {
+            Dialog.show("Echec d'authentification","Username ou mot de passe éronné","OK",null);
+
+        	         
+        }
+        else {
+
+        	 System.out.println("data =="+json);
+                
+                Map<String,Object> user = j.parseJSON(new CharArrayReader(json.toCharArray()));
+                if(user.size() >0 ) { // l9a user
+                	System.out.println("usserrrr "+user);
+    		
+                	
+                	
+                	
+                	
+                	
+                	
+                   récapuser.setId((int)Float.parseFloat(user.get("id").toString()));
+	               récapuser.setNom(user.get("nom").toString());
+	               récapuser.setPrenom(user.get("prenom").toString());
+	               récapuser.setAdresse(user.get("adresse").toString());
+	               récapuser.setNumTel(user.get("numTel").toString());
+	               récapuser.setPassword(user.get("nom").toString());
+	               récapuser.setMailAdress(email);
+	               System.out.println("récap user from userservice"+récapuser);
+	               System.out.println("forgetuser "+RécapPasswordForm.user);
+	             //  new RécapPasswordForm().show();
+	                    
+	               
+            
+                	
+           // new Home2(rs).show();
+            
+        //    if(user.get("photo") != null)
+          //      SessionManager.setPhoto(user.get("photo").toString());
+            
+          
+                } }
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        
+    });
+
+     //ba3d execution ta3 requete ely heya url nestanaw response ta3 server.
+    NetworkManager.getInstance().addToQueueAndWait(req);
+    
+    return récapuser;
+}
+
+
+
+
    //email.clear();  
    }
+
+
 	  
 	  
 	  

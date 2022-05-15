@@ -1,9 +1,11 @@
 package com.mycompany.gui;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.codename1.components.FloatingHint;
 import com.codename1.ui.Button;
+import com.codename1.ui.ComboBox;
 import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
@@ -16,6 +18,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
 import com.mycomany.services.UserService;
+import com.mycompany.entities.User;
 
 public class signUpForm extends BaseForm{
 	
@@ -38,6 +41,18 @@ public class signUpForm extends BaseForm{
 	        TextField confirmpassword = new TextField("", "Mot de passe", 20, TextField.PASSWORD);
 	        TextField mailAdress = new TextField("", "@MAIL", 20, TextField.EMAILADDR);
 
+	        Vector<String> vectorRole;
+	        vectorRole = new Vector();
+	        
+	        vectorRole.add("Administrateur");
+	        vectorRole.add("Coach");
+	        vectorRole.add("Gérant");
+	        vectorRole.add("Sportif");
+
+
+	        
+	        ComboBox<String>roles = new ComboBox<>(vectorRole);
+	        
 	        
 	          		
     		
@@ -86,8 +101,8 @@ public class signUpForm extends BaseForm{
 	                new FloatingHint(mailAdress),
 	                createLineSeparator(),
 	                new FloatingHint(whoami),
-	                createLineSeparator()
-	              //  roles//sinon y7otich role fi form ta3 signup
+	                createLineSeparator(),
+	                roles//sinon y7otich role fi form ta3 signup
 	        );
 	        content.setScrollableY(true);
 	        add(BorderLayout.CENTER, content);
@@ -99,9 +114,11 @@ public class signUpForm extends BaseForm{
 	        next.addActionListener((e) -> {
 	            
 	        	
+	        	User user = new User(name.getText(), prenom.getText(), adresse.getText(), numTel.getText(), password.getText(), mailAdress.getText(), new Date(), roles.getSelectedItem().toString(),
+            			"", new Date(), "", false, 0);
+
 	        
-	        	
-				UserService.getInstance().signup(name, prenom, adresse, numTel, password, mailAdress, whoami, res);
+				UserService.getInstance().addUser(user);
 	            Dialog.show("Success","account is saved","OK",null);
 	            new SignInForm(res).show();
 	        });

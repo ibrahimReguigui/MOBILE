@@ -14,19 +14,15 @@ import com.codename1.ui.util.Resources;
 import com.mycomany.services.UserService;
 import com.mycompany.entities.User;
 
-
-public class AddUserForm extends Form{
-
+public class EditUserForm extends Form{
 	
 	Form current;
 	Resources theme;;
-	public AddUserForm(Form previous) {
+	public EditUserForm(Form previous, User user) {
 		
 		current = this;
-		setTitle("Ajouter Utilisateur");
+		setTitle("Modifier Utilisateur");
 		getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e->previous.showBack());
-		
-		
 		
 		
 			TextField tfnom = new TextField("", "Nom:");
@@ -37,14 +33,30 @@ public class AddUserForm extends Form{
 	        TextField tfmailAdress = new TextField("", "mailAdress");
 	        TextField tfdateNaissance = new TextField("", "dateNaissance");
 	        TextField tfwhoami = new TextField("", "whoami");
-
 	        
+	        tfnom.setText(user.getNom());
+	        tfprenom.setText(user.getPrenom());
+	        tfadresse.setText(user.getAdresse());
+	        tfnumTel.setText(user.getNumTel());
+	        tfpassword.setText(user.getPassword());
+	        tfmailAdress.setText(user.getMailAdress());
+	    //    tfdateNaissance.setText(user.getDateNaissance());
+	        tfwhoami.setText(user.getWhoami());
 
-	        Button btnValider = new Button("Ajouter Utilisateur");
+
+        	System.out.println("user outside actio method:"+user);
+
+
+	        Button btnValider = new Button("Modifier Utilisateur");
 
 	        btnValider.addActionListener(new ActionListener<ActionEvent>() {
+	        	
+	        	
+	        	
 	            @Override
 	            public void actionPerformed(ActionEvent evt) {
+	            	
+	            	
 	                
 	                if ((tfnom.getText().length() == 0) || (tfprenom.getText().length() == 0) ||(tfadresse.getText().length() == 0) ||(tfnumTel.getText().length() == 0) ||(tfmailAdress.getText().length() == 0) || (tfdateNaissance.getText().length() == 0) || (tfwhoami.getText().length() == 0)) {
 	                    Dialog.show("Alert", "Veuillez saisir ces champs?", new Command("OK"));
@@ -52,20 +64,31 @@ public class AddUserForm extends Form{
 	                    try {
 	                        //Integer.parseInt(tfTaille.getText())
 	                         
+	                    	user.setNom(tfnom.getText());
+	                    	user.setPrenom(tfprenom.getText());
+	                    	user.setAdresse(tfadresse.getText());
+	                    	user.setWhoami(tfwhoami.getText());
+	                    	user.setNumTel(tfnumTel.getText());
+	                    	user.setMailAdress(tfmailAdress.getText());
+	                    	user.setPassword(tfpassword.getText());
 	                    	
+	                    	System.out.println("user inside actio method:"+user);
 	                    
 
-	                    	User user = new User(tfnom.getText(), tfprenom.getText(), tfadresse.getText(), tfnumTel.getText(), tfpassword.getText(), tfmailAdress.getText(), new Date(), "Administrateur",
-	                    			"", new Date(), "", false, 0);
 	 
-	                        if (UserService.getInstance().addUser(user)) {
+	                        if (UserService.getInstance().edituser(user)) {
 	                            Dialog.show("Success", "Connexion acceptée ! ", new Command("OK"));
+	                            new ListUsersForm(current).show();
 	                        } else {
 	                            Dialog.show("ERROR", "erreur de serveur", new Command("OK"));
 	                        }
 	                    } catch (NumberFormatException e) {
 	                        Dialog.show("ERROR", "Erreur !!", new Command("OK"));
 	                    }
+	                    Button btnAnnuler = new Button("Annuler");
+	                    btnAnnuler.addActionListener(e -> {
+                            new ListUsersForm(current).show();
+	                    });
 
 	                }
 
@@ -79,4 +102,5 @@ public class AddUserForm extends Form{
 		
 	}
 	
+
 }

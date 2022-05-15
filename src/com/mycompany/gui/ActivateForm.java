@@ -2,6 +2,7 @@ package com.mycompany.gui;
 
 import java.util.Date;
 import java.util.Properties;
+import java.util.Random;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -27,6 +28,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
 import com.mycomany.services.UserService;
+import com.mycompany.entities.User;
 
 public class ActivateForm extends BaseForm {
 
@@ -80,12 +82,24 @@ public class ActivateForm extends BaseForm {
             
             final Dialog ipDialog =  ip.showInfiniteBlocking();
             
-            //houni bch nzido API SEND MAIL autrement bch n3ayto lel function ta3o mais 9bal njibo image oublier.png
-            
             sendMail(res);
             ipDialog.dispose();
+            
+            RécapPasswordForm.user=UserService.getInstance().getForgottenuser(email.getText(), res);
+            RécapPasswordForm.codegenerated=generateCodeToResetPwd();
+            System.out.println(RécapPasswordForm.codegenerated);
+
+            System.out.println("fromActivate form, "+UserService.getInstance().getForgottenuser(email.getText(), res));
+            System.out.println("récap user user from activate"+RécapPasswordForm.user);
+
+
             Dialog.show("Mot de passe","Nous avons envoyé le mot de passe a votre e-mail. Veuillez vérifier votre boite de réception",new Command("OK"));
-            new SignInForm(res).show();
+           // new SignInForm(res).show();
+        	new RécapPasswordForm().show();
+            
+            
+            
+            
             refreshTheme();
             
         });
@@ -152,4 +166,47 @@ public class ActivateForm extends BaseForm {
        
        }
     	}
+    
+    
+    
+    
+    public static String generateCodeToResetPwd() {
+		// create a string of uppercase and lowercase characters and numbers
+		String upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
+		String numbers = "0123456789";
+
+		// combine all strings
+		String alphaNumeric = upperAlphabet + lowerAlphabet + numbers;
+
+		// create random string builder
+		StringBuilder sb = new StringBuilder();
+
+		// create an object of Random class
+		Random random = new Random();
+
+		// specify length of random string
+		int length = 10;
+
+		for(int i = 0; i < length; i++) {
+
+		  // generate random index number
+		  int index = random.nextInt(alphaNumeric.length());
+
+		  // get character specified by index
+		  // from the string
+		  char randomChar = alphaNumeric.charAt(index);
+
+		  // append the character to string builder
+		  sb.append(randomChar);
+		}
+
+		String randomString = sb.toString();
+		return randomString;
+		}
+
+
+
+    
+    
     }
