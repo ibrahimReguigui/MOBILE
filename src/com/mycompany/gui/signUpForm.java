@@ -3,7 +3,10 @@ package com.mycompany.gui;
 import java.util.Date;
 import java.util.Vector;
 
+import javax.mail.search.AddressStringTerm;
+
 import com.codename1.components.FloatingHint;
+import com.codename1.l10n.SimpleDateFormat;
 import com.codename1.ui.Button;
 import com.codename1.ui.ComboBox;
 import com.codename1.ui.Container;
@@ -16,6 +19,7 @@ import com.codename1.ui.Toolbar;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
+import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
 import com.mycomany.services.UserService;
 import com.mycompany.entities.User;
@@ -77,6 +81,9 @@ public class signUpForm extends BaseForm{
 	        numTel.setSingleLineTextArea(false);
 	        mailAdress.setSingleLineTextArea(false);
 	        adresse.setSingleLineTextArea(false);
+	        Picker datepicker = new Picker();
+	        datepicker.setType(Display.PICKER_TYPE_DATE);
+	        
 
 	        confirmpassword.setSingleLineTextArea(false);
 	        Button next = new Button("SignUp");
@@ -102,8 +109,14 @@ public class signUpForm extends BaseForm{
 	                createLineSeparator(),
 	                new FloatingHint(whoami),
 	                createLineSeparator(),
-	                roles//sinon y7otich role fi form ta3 signup
+	                roles,
+	                datepicker//sinon y7otich role fi form ta3 signup
 	        );
+	        
+	        
+	        datepicker.setUIID("TextFieldBlack");
+	        
+	        
 	        content.setScrollableY(true);
 	        add(BorderLayout.CENTER, content);
 	        add(BorderLayout.SOUTH, BoxLayout.encloseY(
@@ -112,9 +125,11 @@ public class signUpForm extends BaseForm{
 	        ));
 	        next.requestFocus();
 	        next.addActionListener((e) -> {
+	        	
+	        	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	            
 	        	
-	        	User user = new User(name.getText(), prenom.getText(), adresse.getText(), numTel.getText(), password.getText(), mailAdress.getText(), new Date(), roles.getSelectedItem().toString(),
+	        	User user = new User(name.getText(), prenom.getText(), adresse.getText(), numTel.getText(), password.getText(), mailAdress.getText(), format.format(datepicker.getDate()), roles.getSelectedItem().toString(),
             			"", new Date(), "", false, 0);
 
 	        

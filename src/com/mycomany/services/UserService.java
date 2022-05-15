@@ -174,7 +174,7 @@ return users;
 	  public boolean addUser(User p) {
 	        System.out.println(p.toString());
 	        System.out.println("********");
-	        String url = Statics.BASE_URL + "/user/signup?nom="+p.getNom()+"&prenom="+p.getPrenom()+"&adresse="+p.getAdresse()+"&numTel="+p.getNumTel()+"&password="+p.getPassword()+"&mailAdress="+p.getMailAdress()+"&whoami="+p.getWhoami();
+	        String url = Statics.BASE_URL + "/user/signup?nom="+p.getNom()+"&prenom="+p.getPrenom()+"&adresse="+p.getAdresse()+"&numTel="+p.getNumTel()+"&password="+p.getPassword()+"&mailAdress="+p.getMailAdress()+"&whoami="+p.getWhoami()+"&dateNaissance="+p.getDateNaissance();
 
 	        req.setUrl(url);
 

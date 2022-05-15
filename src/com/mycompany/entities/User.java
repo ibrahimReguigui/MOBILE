@@ -11,7 +11,7 @@ public class User {
 	private String numTel;
 	private String password;
 	private String mailAdress;
-	private Date dateNaissance;
+	private String dateNaissance;
 	private String whoami;
 	private String blocRaison;
 	private Date unbloc;
@@ -19,7 +19,7 @@ public class User {
 	private boolean isconnected;
 	private Integer nbsignal;
 	public User(int id, String nom, String prenom, String adresse, String numTel, String password,
-			String mailAdress, Date dateNaissance, String whoami, String blocRaison, Date unbloc, String image,
+			String mailAdress, String dateNaissance, String whoami, String blocRaison, Date unbloc, String image,
 			boolean isconnected, Integer nbsignal) {
 		super();
 		this.id = id;
@@ -44,7 +44,7 @@ public class User {
 	}
 
 	public User(String nom, String prenom, String adresse, String numTel, String password, String mailAdress,
-			Date dateNaissance, String whoami, String blocRaison, Date unbloc, String image, boolean isconnected,
+			String dateNaissance, String whoami, String blocRaison, Date unbloc, String image, boolean isconnected,
 			Integer nbsignal) {
 		super();
 		this.nom = nom;
@@ -118,11 +118,11 @@ public class User {
 		this.mailAdress = mailAdress;
 	}
 
-	public Date getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 

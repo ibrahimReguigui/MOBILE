@@ -55,7 +55,7 @@ public class AddUserForm extends Form{
 	                    	
 	                    
 
-	                    	User user = new User(tfnom.getText(), tfprenom.getText(), tfadresse.getText(), tfnumTel.getText(), tfpassword.getText(), tfmailAdress.getText(), new Date(), "Administrateur",
+	                    	User user = new User(tfnom.getText(), tfprenom.getText(), tfadresse.getText(), tfnumTel.getText(), tfpassword.getText(), tfmailAdress.getText(), null, "Administrateur",
 	                    			"", new Date(), "", false, 0);
 	 
 	                        if (UserService.getInstance().addUser(user)) {
