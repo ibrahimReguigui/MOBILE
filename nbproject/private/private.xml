@@ -4,10 +4,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/PIMOBILE/src/gui/ListeCourSalleForm.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/PIMOBILE/src/gui/AjouterCourForm.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/PIMOBILE/src/gui/RechercheForm.java</file>
-            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/PIMOBILE/src/com/codename1/uikit/cleanmodern/NewsfeedForm.java</file>
+            <file>file:/C:/Users/oussa/Downloads/nahawandMobile/PIMOBILE/src/gui/AjoutEvent.java</file>
+            <file>file:/C:/Users/oussa/Downloads/nahawandMobile/PIMOBILE/src/services/ServiceEvent.java</file>
+            <file>file:/C:/Users/oussa/Downloads/nahawandMobile/PIMOBILE/src/utils/Statics.java</file>
+            <file>file:/C:/Users/oussa/Downloads/nahawandMobile/PIMOBILE/src/entities/Event.java</file>
+            <file>file:/C:/Users/oussa/Downloads/nahawandMobile/PIMOBILE/src/gui/MapForm.java</file>
+            <file>file:/C:/Users/oussa/Downloads/nahawandMobile/PIMOBILE/src/gui/EventForm.java</file>
         </group>
     </open-files>
 </project-private>
