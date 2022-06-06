@@ -1,4 +1,4 @@
-/*
+   /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -173,7 +173,7 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
     }
 
     public ArrayList<CourSalle> recherche(String data) {
-        String url = Statics.BASE_URL + "salle/cour/MOBILE/recherche?data=" + data; //création de l'URL
+        String url = Statics.BASE_URL + "salle/cour/MOBILE/recherche?data=" +data; //création de l'URL
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -189,22 +189,22 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
 
     public void sendMail(Resources res,int id) {
         try {
-            String url = Statics.BASE_URL + "salle/cour/MOBILE/listePdfDownloadMobile?id="+id; //création de l'URL
-            req.setUrl(url);// Insertion de l'URL de notre demande de connexion
-            req.addResponseListener(new ActionListener<NetworkEvent>() {
-                @Override
-                public void actionPerformed(NetworkEvent evt) {
-                    resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
-                    req.removeResponseListener(this); //Supprimer cet actionListener
-                    /* une fois que nous avons terminé de l'utiliser.
-                La ConnectionRequest req est unique pour tous les appels de 
-                n'importe quelle méthode du Service task, donc si on ne supprime
-                pas l'ActionListener il sera enregistré et donc éxécuté même si 
-                la réponse reçue correspond à une autre URL(get par exemple)*/
-
-                }
-            });
-            NetworkManager.getInstance().addToQueueAndWait(req);
+//            String url = Statics.BASE_URL + "salle/cour/MOBILE/listePdfDownloadMobile?id="+id; //création de l'URL
+//            req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+//            req.addResponseListener(new ActionListener<NetworkEvent>() {
+//                @Override
+//                public void actionPerformed(NetworkEvent evt) {
+//                    resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+//                    req.removeResponseListener(this); //Supprimer cet actionListener
+//                    /* une fois que nous avons terminé de l'utiliser.
+//                La ConnectionRequest req est unique pour tous les appels de 
+//                n'importe quelle méthode du Service task, donc si on ne supprime
+//                pas l'ActionListener il sera enregistré et donc éxécuté même si 
+//                la réponse reçue correspond à une autre URL(get par exemple)*/
+//
+//                }
+//            });
+//            NetworkManager.getInstance().addToQueueAndWait(req);
             Properties props = new Properties();
             props.put("mail.transport.protocol", "smtp"); //SMTP protocol
             props.put("mail.smtps.host", "smtp.gmail.com"); //SMTP Host
@@ -214,7 +214,7 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
 
             MimeMessage msg = new MimeMessage(session);
 
-            msg.setRecipients(Message.RecipientType.TO, "ibrahim.reguigui@esprit.tn");
+            msg.setRecipients(Message.RecipientType.TO, "");
             msg.setSubject("Fitnessni ");
             msg.setSentDate(new Date(System.currentTimeMillis()));
             BodyPart messageBodyPart = new MimeBodyPart();
@@ -233,14 +233,14 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
                     + "<p style=\"text-align: center;font-weight: 800;color:white;font-family: cursive;font-style: italic;font-size: 2.5em;\">Merci d'avoir utilisé notre application</p>\n"
                     + "</body>", "text/html; charset=utf-8");
             MimeBodyPart attachmentPart = new MimeBodyPart();
-            attachmentPart.attachFile(new File("C:\\Users\\Asus\\Desktop\\PIWeb\\PIWeb\\public\\mypdf.pdf"));
+            attachmentPart.attachFile(new File("C:\\Users\\Asus\\Desktop\\PIWeb\\public\\mypdf.pdf"));
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
             multipart.addBodyPart(attachmentPart);
             msg.setContent(multipart);
             SMTPTransport st = (SMTPTransport) session.getTransport("smtps");
 
-            st.connect("smtp.gmail.com", 465, "ibrahim.reguigui@esprit.tn", "213JMT1808");
+            st.connect("smtp.gmail.com", 465, "", "");
 
             st.sendMessage(msg, msg.getAllRecipients());
 
@@ -252,8 +252,7 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
     }
     
     
-        
-     public ArrayList<Caracteristiquesportif> parseCaracteristiquesportif(String jsonText) {
+    public ArrayList<Caracteristiquesportif> parseCaracteristiquesportif(String jsonText) {
         try {
             caracteristiquesportifs = new ArrayList<>();
             JSONParser j = new JSONParser();
@@ -323,16 +322,14 @@ public ArrayList<Caracteristiquesportif> caracteristiquesportifs;
         NetworkManager.getInstance().addToQueueAndWait(req);
         return caracteristiquesportifs;
     }
-
     
     ////////////////////////////////////////////////////////////////////////////////////////////
     
-    public boolean addCaracteristiquesportif(Caracteristiquesportif c) {
+public boolean addCaracteristiquesportif(Caracteristiquesportif c) {
         System.out.println(c);
-        System.out.println("********");
+        System.out.println("******");
        //String url = Statics.BASE_URL + "create?name=" + t.getTailleSportif() + "&status=" + t.getStatus();
-       String url = Statics.BASE_URL + "AddCaracteristiquesportif?taille="+c.getTailleSportif() +"&poid=" +c.getPoidSportif()+"&age=" +c.getAgeSportif()+"&sexe=" +c.getSexe()+"&"
-               + "" +c.getObjectifNutrition();
+       String url = Statics.BASE_URL + "AddCaracteristiquesportif?taille="+c.getTailleSportif() +"&poid=" +c.getPoidSportif()+"&age=" +c.getAgeSportif()+"&sexe=" +c.getSexe()+"&objectifNutrition=" +c.getObjectifNutrition();
     
        req.setUrl(url);
        

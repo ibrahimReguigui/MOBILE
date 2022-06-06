@@ -57,7 +57,7 @@ public class AjouterCourForm extends Form {
             public void actionPerformed(ActionEvent evt) {
                
                     try {
-                        CourSalle c = new CourSalle(3,0,Integer.parseInt(tfNbrTotal.getText()),datePicker.getText(),datePicker2.getText(),tfInformation.getText(), tfNom.getText());
+                        CourSalle c = new CourSalle(3,0,Integer.parseInt(tfNbrTotal.getText()),datePicker.getText().replace('/', '-'),datePicker2.getText(),tfInformation.getText(), tfNom.getText());
                         if( ServiceCourSalle.getInstance().addCourSalle(c)){
                             Dialog.show("Success","Cour ajoutée",new Command("OK"));
                             new ListeCourSalleForm(res).show();
@@ -66,11 +66,7 @@ public class AjouterCourForm extends Form {
                             Dialog.show("ERROR", "Server error", new Command("OK"));
                     } catch (NumberFormatException e) {
                         Dialog.show("ERROR", "Nombre incorrect", new Command("OK"));
-                    }
-                    
-                
-                
-                
+                    }      
             }
         });
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());

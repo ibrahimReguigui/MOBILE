@@ -9,6 +9,7 @@ import com.codename1.components.SpanLabel;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import services.ServiceCourSalle;
+import static services.ServiceCourSalle.instance;
 
 /**
  *
@@ -16,6 +17,7 @@ import services.ServiceCourSalle;
  */
 public class Listcarac extends Form{
      Form current;
+     
     public Listcarac(Form previous) {
           
         getTitleArea().setUIID("Container");
@@ -23,6 +25,7 @@ public class Listcarac extends Form{
                 SpanLabel sp = new SpanLabel();
         sp.setText(ServiceCourSalle.getInstance().getAllCaracteristiquesportif().toString());
         add(sp);
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
+//        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
     }
 }

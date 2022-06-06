@@ -51,7 +51,6 @@ import utils.Statics;
 public class ListeCourSalleForm extends Form {
 
     TextField email;
-    private int cpt = 0;
     Form current;
 
     /*Garder traçe de la Form en cours pour la passer en paramètres 
@@ -63,12 +62,17 @@ public class ListeCourSalleForm extends Form {
         setUIID("background9");
 
         current = this; //Récupération de l'interface(Form) en cours
-        
+
         setTitle("Salle");
         setLayout(BoxLayout.y());
 
+        Button btnRecherche = new Button("Chercher");
+        TextField tbRecherche = new TextField("", "Recherche");
+        
+        Toolbar tb = current.getToolbar();
+        add(tbRecherche);
+        add(btnRecherche);
         add(new Label("Liste Cours"));
-
         for (CourSalle s : ServiceCourSalle.getInstance().getCourSalle()) {
 
             System.out.println(s);
@@ -99,29 +103,33 @@ public class ListeCourSalleForm extends Form {
                     dig.dispose();
                 }
             });
-
         }
 
         Button btnAjouter = new Button("Ajouter");
-        Button btnRecherche = new Button("Chercher");
+
         add(btnAjouter);
 
         btnAjouter.addActionListener(e -> new AjouterCourForm(current, res).show());
-        TextField tbRecherche = new TextField("", "Recherche");tbRecherche.setUIID("TextFieldBlack");
-        Toolbar tb = current.getToolbar();
+
         Image icon = res.getImage("icon.png");
         Container topBar = BorderLayout.east(new Label(icon));
         topBar.add(BorderLayout.NORTH, new Label("Menu", "SidemenuTagline"));
-        topBar.add(BorderLayout.CENTER, tbRecherche);
-        topBar.add(BorderLayout.SOUTH, btnRecherche);
+//        topBar.add(BorderLayout.CENTER, tbRecherche);
+//        topBar.add(BorderLayout.SOUTH, btnRecherche);
+
         topBar.setUIID("SideCommand");
         tb.addComponentToSideMenu(topBar);
 
         tb.addMaterialCommandToSideMenu("Liste Cours", FontImage.MATERIAL_HOME, e -> new ListeCourSalleForm(res).show());
+//         tb.addMaterialCommandToSideMenu("Events", FontImage.MATERIAL_HOME, e -> new EventForm( current,res).show());
         tb.addMaterialCommandToSideMenu("Ajouter Cour", FontImage.MATERIAL_WEB, e -> {
             new AjouterCourForm(current, res).show();
         });
-tb.addMaterialCommandToSideMenu(" Caracteristiques", FontImage.MATERIAL_HOME, e -> new caracForm(current).show());
+//        tb.addMaterialCommandToSideMenu(" Caracteristiques", FontImage.MATERIAL_HOME, e -> new caracForm(current).show());
+        tb.addMaterialCommandToSideMenu(" liste Produit", FontImage.MATERIAL_HOME, e -> new listProduitForm(current).show());
+        tb.addMaterialCommandToSideMenu(" liste Categorie", FontImage.MATERIAL_HOME, e -> new listCategorieForm(current).show());
+        tb.addMaterialCommandToSideMenu(" Stat", FontImage.MATERIAL_HOME, e -> new HomeStat(res).show());
+//        tb.addMaterialCommandToSideMenu(" Exercice", FontImage.MATERIAL_HOME, e -> new ListExerciceForm(res).show());
         btnRecherche.addActionListener(e -> new RechercheForm(current, res, tbRecherche.getText().toString()).show());
         Button btnMail = new Button("Recevoir Par Mail");
         add(btnMail);
@@ -130,11 +138,7 @@ tb.addMaterialCommandToSideMenu(" Caracteristiques", FontImage.MATERIAL_HOME, e 
             ServiceCourSalle.getInstance().sendMail(res, 3);
             System.out.println("*******************");
         });
-        
-        
-        
-         
+
     }
 
-       
 }

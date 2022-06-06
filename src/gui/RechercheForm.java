@@ -69,7 +69,7 @@ public class RechercheForm extends Form {
                 Dialog dig = new Dialog("Suppression");
                 if (dig.show("Suppression", "Vous voulez supprimer ce cour ?", "Confirmer", "Retour")) {
                     ServiceCourSalle.getInstance().supprimerCourSalle(s);
-                    current.show();
+                    new ListeCourSalleForm(res).show();
                 } else {
                     dig.dispose();
                 }
@@ -84,14 +84,18 @@ public class RechercheForm extends Form {
         Image icon = res.getImage("icon.png");
         Container topBar = BorderLayout.east(new Label(icon));
         topBar.add(BorderLayout.NORTH, new Label("Menu", "SidemenuTagline"));
-        topBar.add(BorderLayout.CENTER, tbRecherche);
-        topBar.add(BorderLayout.SOUTH, btnRecherche);
+       
         topBar.setUIID("SideCommand");
         tb.addComponentToSideMenu(topBar);
-        
-        tb.addMaterialCommandToSideMenu("Liste Cours", FontImage.MATERIAL_HOME,e-> new ListeCourSalleForm(res).show());
-        tb.addMaterialCommandToSideMenu("Ajouter", FontImage.MATERIAL_WEB, e -> {new AjouterCourForm(current, res).show();
+       tb.addMaterialCommandToSideMenu("Liste Cours", FontImage.MATERIAL_HOME, e -> new ListeCourSalleForm(res).show());
+//         tb.addMaterialCommandToSideMenu("Events", FontImage.MATERIAL_HOME, e -> new EventForm( current,res).show());
+        tb.addMaterialCommandToSideMenu("Ajouter Cour", FontImage.MATERIAL_WEB, e -> {
+            new AjouterCourForm(current, res).show();
         });
+//        tb.addMaterialCommandToSideMenu(" Caracteristiques", FontImage.MATERIAL_HOME, e -> new caracForm(current).show());
+        tb.addMaterialCommandToSideMenu(" liste Produit", FontImage.MATERIAL_HOME, e -> new listProduitForm(current).show());
+        tb.addMaterialCommandToSideMenu(" liste Categorie", FontImage.MATERIAL_HOME, e -> new listCategorieForm(current).show());
+        tb.addMaterialCommandToSideMenu(" Stat", FontImage.MATERIAL_HOME, e -> new HomeStat(res).show());
         
         btnRecherche.addActionListener(e -> new RechercheForm(current, res,tbRecherche.getText().toString()).show());
     }
