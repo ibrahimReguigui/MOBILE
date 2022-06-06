@@ -3,32 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package entities;
 
 /**
  *
- * @author infoevo
+ * @author MSI
  */
 public class Produit {
-
-  private int id;
-     private String categorie_prod;
+    private int id;
+    private int category_id;
+    
+    private String categorie;
      private String libelle ;
      private String marque ;
      private float prix	;
      private String description;
-     private String image_prod;
+     private String image;
      private String disponibilite;	
       private float note;
       private int quantite;	
-/*      id_prod
-     categorie_prod
+/*      id
+     categorie
      libelle 
       marque 
      prix	
-     description_prod
-     image_prod
+     description
+     image
      disponibilite	
        note
       quantite	
@@ -37,34 +37,49 @@ public class Produit {
     public Produit() {
     }
 
-    public Produit(int id, String categorie_prod, String libelle, String marque, float prix, String description, String image_prod, String disponibilite, float note, int quantite) {
+    public Produit(int id, int category_id, String categorie, String libelle, String marque, float prix, String description, String image, String disponibilite, float note, int quantite) {
         this.id = id;
-        this.categorie_prod = categorie_prod;
+        this.category_id = category_id;
+        this.categorie = categorie;
         this.libelle = libelle;
         this.marque = marque;
         this.prix = prix;
         this.description = description;
-        this.image_prod = image_prod;
+        this.image = image;
         this.disponibilite = disponibilite;
         this.note = note;
         this.quantite = quantite;
     }
 
-    public Produit(String categorie_prod, String libelle, String marque, float prix, String description, String image_prod, String disponibilite, float note, int quantite) {
-        this.categorie_prod = categorie_prod;
+    public Produit(int category_id, String categorie, String libelle, String marque, float prix, String description, String image, String disponibilite, float note, int quantite) {
+        this.category_id = category_id;
+        this.categorie = categorie;
         this.libelle = libelle;
         this.marque = marque;
         this.prix = prix;
         this.description = description;
-        this.image_prod = image_prod;
+        this.image = image;
         this.disponibilite = disponibilite;
         this.note = note;
         this.quantite = quantite;
     }
 
-    public Produit( String categorie_prod, String libelle, String marque, float prix, String description, String disponibilite, float note, int quantite) {
-        
-        this.categorie_prod = categorie_prod;
+    public Produit(String categorie, String libelle, String marque, float prix, String description, String image, String disponibilite, float note, int quantite) {
+        this.categorie = categorie;
+        this.libelle = libelle;
+        this.marque = marque;
+        this.prix = prix;
+        this.description = description;
+        this.image = image;
+        this.disponibilite = disponibilite;
+        this.note = note;
+        this.quantite = quantite;
+    }
+    
+    //Constr affichage
+
+    public Produit(String categorie, String libelle, String marque, float prix, String description, String disponibilite, float note, int quantite) {
+        this.categorie = categorie;
         this.libelle = libelle;
         this.marque = marque;
         this.prix = prix;
@@ -74,24 +89,41 @@ public class Produit {
         this.quantite = quantite;
     }
 
-    public Produit(String categorie_prod) {
-        this.categorie_prod = categorie_prod;
+    public Produit(int id) {
+        this.id = id;
+    }
+    
+
+    public int getCategory_id() {
+        return category_id;
     }
 
-    public int getId() {
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
+
+
+
+
+
+    public Produit(String categorie) {
+        this.categorie = categorie;
+    }
+
+    public int getid() {
         return id;
     }
 
-    public void setId(int id_prod) {
+    public void setid(int id) {
         this.id = id;
     }
 
-    public String getCategorie_prod() {
-        return categorie_prod;
+    public String getcategorie() {
+        return categorie;
     }
 
-    public void setCategorie_prod(String categorie_prod) {
-        this.categorie_prod = categorie_prod;
+    public void setcategorie(String categorie) {
+        this.categorie = categorie;
     }
 
     public String getLibelle() {
@@ -118,20 +150,20 @@ public class Produit {
         this.prix = prix;
     }
 
-    public String getDescription() {
+    public String getdescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setdescription(String description) {
         this.description = description;
     }
 
-    public String getImage_prod() {
-        return image_prod;
+    public String getimage() {
+        return image;
     }
 
-    public void setImage_prod(String image_prod) {
-        this.image_prod = image_prod;
+    public void setimage(String image) {
+        this.image = image;
     }
 
     public String getDisponibilite() {
@@ -160,11 +192,8 @@ public class Produit {
 
     @Override
     public String toString() {
-        return "Produit{" + "id_prod=" + id + ", categorie_prod=" + categorie_prod + ", libelle=" + libelle + ", marque=" + marque + ", prix=" + prix + ", description_prod=" + description + ", image_prod=" + image_prod + ", disponibilite=" + disponibilite + ", note=" + note + ", quantite=" + quantite + '}';
+        return "Produit{" + "id=" + id + ", categorie=" + categorie + ", libelle=" + libelle + ", marque=" + marque + ", prix=" + prix + ", description=" + description + ", image=" + image + ", disponibilite=" + disponibilite + ", note=" + note + ", quantite=" + quantite + '}';
     }
 
     
 }
-
-
-

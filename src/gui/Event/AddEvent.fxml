@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="EventScene_id" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Event.AddEventController">
+   <children>
+      <ImageView fitHeight="897.0" fitWidth="1514.0" layoutX="406.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-122.0" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="-5.0">
+         <image>
+            <Image url="@../../img/Capture.PNG" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="770.0" prefWidth="412.0" style="-fx-background-color: TEAL;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1500.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="92.0" prefWidth="340.0" text="Add Event" textFill="#84ffe2" translateX="10.0">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+            <TextField fx:id="id" prefHeight="44.0" prefWidth="292.0" promptText="id event" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="Calibri Light" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="name" prefHeight="34.0" prefWidth="292.0" promptText="name event" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="Calibri Light" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <DatePicker fx:id="dated" promptText="date debut" showWeekNumbers="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </DatePicker>
+            <DatePicker fx:id="datef" promptText="date fin">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Button fx:id="insererimg" mnemonicParsing="false" onAction="#insererimg" style="-fx-background-radius: 60;" text="Select Image">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+               <effect>
+                  <ColorAdjust brightness="0.18" contrast="-0.05" hue="0.1" saturation="0.35" />
+               </effect>
+            </Button>
+            <ImageView fx:id="imgview" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <TextField fx:id="nbrplaces" prefHeight="39.0" prefWidth="292.0" promptText="nbrPlaces" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="Calibri Light" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="locationevent" prefHeight="46.0" prefWidth="292.0" promptText="location event" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="Calibri Light" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="add" mnemonicParsing="false" onAction="#AjouterEvent" prefHeight="36.0" prefWidth="210.0" style="-fx-background-radius: 60;" text="Add" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="50.0" top="30.0" />
+               </VBox.margin>
+               <effect>
+                  <ColorAdjust brightness="-0.07" contrast="-0.07" hue="1.0" saturation="0.73" />
+               </effect>
+            </Button>
+            <Button fx:id="update" mnemonicParsing="false" onAction="#modifierEvent" prefHeight="36.0" prefWidth="211.0" style="-fx-background-radius: 60;" text="Update" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="20.0" right="15.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="50.0" />
+               </VBox.margin>
+               <effect>
+                  <ColorAdjust brightness="-0.07" contrast="-0.07" hue="1.0" saturation="0.73" />
+               </effect>
+            </Button>
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#supprimerEvent" prefHeight="36.0" prefWidth="211.0" style="-fx-background-radius: 60;" text="delete" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="50.0" />
+               </VBox.margin>
+               <effect>
+                  <ColorAdjust brightness="-0.07" contrast="-0.07" hue="1.0" saturation="0.73" />
+               </effect>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="502.0" layoutY="161.0" prefHeight="359.0" prefWidth="861.0" AnchorPane.bottomAnchor="241.0">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+         <children>
+            <TableView fx:id="Table_event" editable="true" onMouseClicked="#showDetails" prefHeight="359.0" prefWidth="837.0" style="-fx-background-color: #afffe0#afffe0; -fx-background-radius: 30;">
+              <columns>
+                <TableColumn fx:id="col_id" maxWidth="71.0" prefWidth="63.0" text="ID" />
+                <TableColumn fx:id="col_name" maxWidth="171.0" prefWidth="130.0" text="Nom Event" />
+                  <TableColumn fx:id="col_dated" maxWidth="182.0" prefWidth="129.0" text="Date Debut" />
+                  <TableColumn fx:id="col_datef" maxWidth="194.0" prefWidth="102.0" text="Date Fin" />
+                  <TableColumn fx:id="col_nbrplaces" maxWidth="204.0" prefWidth="76.0" text="nbr Place" />
+                  <TableColumn fx:id="col_location" maxWidth="174.0" prefWidth="114.0" text="Location" />
+                  <TableColumn fx:id="col_img" maxWidth="226.0" prefWidth="226.0" text="img" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <Button layoutX="1135.0" layoutY="563.0" mnemonicParsing="false" onAction="#chercher" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 60;" text="Search" textFill="#1200b8">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.05" contrast="0.1" hue="0.17" saturation="0.55" />
+         </effect>
+      </Button>
+      <TextField fx:id="searchField" layoutX="732.0" layoutY="566.0" prefHeight="33.0" prefWidth="345.0" promptText="name" style="-fx-background-radius: 30;" />
+      <Text fx:id="searchText" fill="WHITE" layoutX="458.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search for an event :" wrappingWidth="246.99997907876968">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="468.0" layoutY="641.0" mnemonicParsing="false" onAction="#pdf" prefHeight="31.0" prefWidth="67.0" style="-fx-background-radius: 60;" text="pdf" textFill="#ff1f1f">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.05" contrast="0.1" hue="0.17" saturation="0.55" />
+         </effect></Button>
+      <Button fx:id="Statistics" layoutX="564.0" layoutY="641.0" mnemonicParsing="false" onAction="#showStat" prefHeight="31.0" prefWidth="130.0" style="-fx-background-radius: 60;" text="statistique" textFill="#ff44d7">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.05" contrast="0.1" hue="0.17" saturation="0.55" />
+         </effect></Button>
+      <Button fx:id="Refresh" layoutX="1270.0" layoutY="647.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="31.0" prefWidth="185.0" style="-fx-background-radius: 60;" text="Refresh" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.05" contrast="0.1" hue="0.17" saturation="0.55" />
+         </effect>
+      </Button>
+      <HBox layoutX="406.0" prefHeight="70.0" prefWidth="1506.0" style="-fx-background-color: teal;">
+         <children>
+            <Hyperlink fx:id="forumhyp" onAction="#forum" prefHeight="52.0" prefWidth="120.0" text="FORUM" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </HBox>
+      <ImageView fitHeight="100.0" fitWidth="210.0" layoutX="410.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/272663429_433859438440666_3322388444377380140_n.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="img_id" layoutX="59.0" layoutY="395.0" prefHeight="47.0" prefWidth="292.0" promptText="img" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Calibri Light" size="12.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

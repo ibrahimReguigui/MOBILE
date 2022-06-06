@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Chawki.AfficherExercicesController">
+   <children>
+      <ImageView fitHeight="785.0" fitWidth="1303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Capture.PNG" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table" layoutX="299.0" layoutY="216.0" prefHeight="200.0" prefWidth="695.0" style="-fx-background-radius: 25;">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="112.0" text="nom" />
+          <TableColumn fx:id="description" prefWidth="126.0" text="description" />
+            <TableColumn fx:id="categorie" prefWidth="108.0" text="categorie" />
+            <TableColumn fx:id="nbrRep" prefWidth="154.0" text="Nombre Rep" />
+            <TableColumn fx:id="nbrSerie" prefWidth="194.0" text="Nombre Serie" />
+        </columns>
+         <effect>
+            <ColorAdjust contrast="0.05" hue="0.18" saturation="0.32" />
+         </effect>
+      </TableView>
+      <Button fx:id="ajouter" layoutX="819.0" layoutY="458.0" mnemonicParsing="false" onAction="#AjouterE" prefHeight="53.0" prefWidth="126.0" style="-fx-background-radius: 60;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.22" contrast="0.22" hue="-0.92" saturation="0.38" />
+         </effect></Button>
+      <Button fx:id="retour" layoutX="376.0" layoutY="458.0" mnemonicParsing="false" onAction="#RetourG" prefHeight="53.0" prefWidth="113.0" style="-fx-background-radius: 60;" text="Retour">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.22" contrast="0.22" hue="-0.92" saturation="0.38" />
+         </effect></Button>
+      <Button fx:id="supprimer" layoutX="599.0" layoutY="458.0" mnemonicParsing="false" onAction="#SupprimerE" prefHeight="53.0" prefWidth="113.0" style="-fx-background-radius: 60;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.22" contrast="0.22" hue="-0.92" saturation="0.38" />
+         </effect></Button>
+      <ImageView fitHeight="148.0" fitWidth="312.0" layoutX="947.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/logo%20fitnes.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

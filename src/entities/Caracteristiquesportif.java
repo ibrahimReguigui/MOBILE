@@ -3,154 +3,144 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp.entities;
+package entities;
 
 /**
  *
- * @author bhk
+ * @author Asus
  */
-public class Caracteristiquesportif {
-    private int id,tailleSportif,poidSportif,ageSportif;
-    private String sexe,objectifNutrition;
-    private float bmiSportif,besoinProteine,besoinCarb,besoinCalories;
+public class caracteristiquesportif {
+    private int id,id_sportif_id,taille_sportif,poid_sportif,age_sportif;
+    private String sexe,objectif_nutrition;
+    private Float bmi_sportif,besoin_sportif,besoin_proteine,besoin_carb,besoin_calories;
 
-    public Caracteristiquesportif(int id, int tailleSportif, int poidSportif, int ageSportif, String sexe, String objectifNutrition, float bmiSportif, float besoinProteine, float besoinCarb, float besoinCalories) {
+    public caracteristiquesportif() {
+    }
+
+    public caracteristiquesportif(int id, int id_sportif_id, int taille_sportif, int poid_sportif, int age_sportif, String sexe, String objectif_nutrition, Float bmi_sportif, Float besoin_sportif, Float besoin_proteine, Float besoin_carb, Float besoin_calories) {
         this.id = id;
-        this.tailleSportif = tailleSportif;
-        this.poidSportif = poidSportif;
-        this.ageSportif = ageSportif;
+        this.id_sportif_id = id_sportif_id;
+        this.taille_sportif = taille_sportif;
+        this.poid_sportif = poid_sportif;
+        this.age_sportif = age_sportif;
         this.sexe = sexe;
-        this.objectifNutrition = objectifNutrition;
-        this.bmiSportif = bmiSportif;
-        this.besoinProteine = besoinProteine;
-        this.besoinCarb = besoinCarb;
-        this.besoinCalories = besoinCalories;
+        this.objectif_nutrition = objectif_nutrition;
+        this.bmi_sportif = bmi_sportif;
+        this.besoin_sportif = besoin_sportif;
+        this.besoin_proteine = besoin_proteine;
+        this.besoin_carb = besoin_carb;
+        this.besoin_calories = besoin_calories;
     }
 
-    public Caracteristiquesportif(int tailleSportif, int poidSportif, int ageSportif, String sexe, String objectifNutrition, float bmiSportif, float besoinProteine, float besoinCarb, float besoinCalories) {
-        this.tailleSportif = tailleSportif;
-        this.poidSportif = poidSportif;
-        this.ageSportif = ageSportif;
+    @Override
+    public String toString() {
+        return "caracteristiquesportif{" + "id=" + id + ", id_sportif_id=" + id_sportif_id + ", taille_sportif=" + taille_sportif + ", poid_sportif=" + poid_sportif + ", age_sportif=" + age_sportif + ", sexe=" + sexe + ", objectif_nutrition=" + objectif_nutrition + ", bmi_sportif=" + bmi_sportif + ", besoin_sportif=" + besoin_sportif + ", besoin_proteine=" + besoin_proteine + ", besoin_carb=" + besoin_carb + ", besoin_calories=" + besoin_calories + '}';
+    }
+
+    public caracteristiquesportif(int id_sportif_id, int taille_sportif, int poid_sportif, int age_sportif, String sexe, String objectif_nutrition) {
+        this.id_sportif_id = id_sportif_id;
+        this.taille_sportif = taille_sportif;
+        this.poid_sportif = poid_sportif;
+        this.age_sportif = age_sportif;
         this.sexe = sexe;
-        this.objectifNutrition = objectifNutrition;
-        this.bmiSportif = bmiSportif;
-        this.besoinProteine = besoinProteine;
-        this.besoinCarb = besoinCarb;
-        this.besoinCalories = besoinCalories;
+        this.objectif_nutrition = objectif_nutrition;
     }
-
-    public Caracteristiquesportif(int tailleSportif, int poidSportif, int ageSportif, String sexe, String objectifNutrition) {
-        this.tailleSportif = tailleSportif;
-        this.poidSportif = poidSportif;
-        this.ageSportif = ageSportif;
-        this.sexe = sexe;
-        this.objectifNutrition = objectifNutrition;
-    }
-
-    public Caracteristiquesportif(int tailleSportif, int poidSportif, int ageSportif) {
-        this.tailleSportif = tailleSportif;
-        this.poidSportif = poidSportif;
-        this.ageSportif = ageSportif;
-    }
-
-    public Caracteristiquesportif() {
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId_sportif_id() {
+        return id_sportif_id;
     }
 
-    public int getTailleSportif() {
-        return tailleSportif;
+    public int getTaille_sportif() {
+        return taille_sportif;
     }
 
-    public void setTailleSportif(int tailleSportif) {
-        this.tailleSportif = tailleSportif;
+    public int getPoid_sportif() {
+        return poid_sportif;
     }
 
-    public int getPoidSportif() {
-        return poidSportif;
-    }
-
-    public void setPoidSportif(int poidSportif) {
-        this.poidSportif = poidSportif;
-    }
-
-    public int getAgeSportif() {
-        return ageSportif;
-    }
-
-    public void setAgeSportif(int ageSportif) {
-        this.ageSportif = ageSportif;
+    public int getAge_sportif() {
+        return age_sportif;
     }
 
     public String getSexe() {
         return sexe;
     }
 
+    public String getObjectif_nutrition() {
+        return objectif_nutrition;
+    }
+
+    public Float getBmi_sportif() {
+        return bmi_sportif;
+    }
+
+    public Float getBesoin_sportif() {
+        return besoin_sportif;
+    }
+
+    public Float getBesoin_proteine() {
+        return besoin_proteine;
+    }
+
+    public Float getBesoin_carb() {
+        return besoin_carb;
+    }
+
+    public Float getBesoin_calories() {
+        return besoin_calories;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setId_sportif_id(int id_sportif_id) {
+        this.id_sportif_id = id_sportif_id;
+    }
+
+    public void setTaille_sportif(int taille_sportif) {
+        this.taille_sportif = taille_sportif;
+    }
+
+    public void setPoid_sportif(int poid_sportif) {
+        this.poid_sportif = poid_sportif;
+    }
+
+    public void setAge_sportif(int age_sportif) {
+        this.age_sportif = age_sportif;
+    }
+
     public void setSexe(String sexe) {
         this.sexe = sexe;
     }
 
-    public String getObjectifNutrition() {
-        return objectifNutrition;
+    public void setObjectif_nutrition(String objectif_nutrition) {
+        this.objectif_nutrition = objectif_nutrition;
     }
 
-    public void setObjectifNutrition(String objectifNutrition) {
-        this.objectifNutrition = objectifNutrition;
+    public void setBmi_sportif(Float bmi_sportif) {
+        this.bmi_sportif = bmi_sportif;
     }
 
-    public float getBmiSportif() {
-        return bmiSportif;
+    public void setBesoin_sportif(Float besoin_sportif) {
+        this.besoin_sportif = besoin_sportif;
     }
 
-    public void setBmiSportif(float bmiSportif) {
-        this.bmiSportif = bmiSportif;
+    public void setBesoin_proteine(Float besoin_proteine) {
+        this.besoin_proteine = besoin_proteine;
     }
 
-    public float getBesoinProteine() {
-        return besoinProteine;
+    public void setBesoin_carb(Float besoin_carb) {
+        this.besoin_carb = besoin_carb;
     }
 
-    public void setBesoinProteine(float besoinProteine) {
-        this.besoinProteine = besoinProteine;
-    }
-
-    public float getBesoinCarb() {
-        return besoinCarb;
-    }
-
-    public void setBesoinCarb(float besoinCarb) {
-        this.besoinCarb = besoinCarb;
-    }
-
-    public float getBesoinCalories() {
-        return besoinCalories;
-    }
-
-    public void setBesoinCalories(float besoinCalories) {
-        this.besoinCalories = besoinCalories;
-    }
-
-    @Override
-    public String toString() {
-        return "Caracteristiquesportif{" + "id=" + id + ", tailleSportif=" + tailleSportif + ", poidSportif=" + poidSportif + ", ageSportif=" + ageSportif + ", sexe=" + sexe + ", objectifNutrition=" + objectifNutrition + ", bmiSportif=" + bmiSportif + ", besoinProteine=" + besoinProteine + ", besoinCarb=" + besoinCarb + ", besoinCalories=" + besoinCalories + '}';
+    public void setBesoin_calories(Float besoin_calories) {
+        this.besoin_calories = besoin_calories;
     }
     
     
-  
 }

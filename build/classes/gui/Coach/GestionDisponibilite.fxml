@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Coach.GestionDisponibiliteController">
+   <children>
+      <ImageView fitHeight="899.0" fitWidth="1318.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/Capture.PNG" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="datePicker" editable="false" layoutX="542.0" layoutY="158.0" prefHeight="44.0" prefWidth="255.0" />
+      <ToggleButton fx:id="H7" layoutX="336.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="7H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H13" layoutX="860.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="13H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H10" layoutX="582.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="10H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <Button fx:id="confirmer" layoutX="895.0" layoutY="180.0" mnemonicParsing="false" onAction="#ajouterDisponibilite" style="-fx-background-radius: 60;" text="Ajouter">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <ToggleButton fx:id="H18" layoutX="723.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="18H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H17" layoutX="634.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="17H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H16" layoutX="545.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="16H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H15" layoutX="466.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="15H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H14" layoutX="378.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="14H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H11" layoutX="669.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="11H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H8" layoutX="423.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="8H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H20" layoutX="902.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="20H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H9" layoutX="502.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="9H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H12" layoutX="764.0" layoutY="241.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="12H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <ToggleButton fx:id="H19" layoutX="816.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-radius: 60;" text="19H">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></ToggleButton>
+      <Button fx:id="retour" layoutX="369.0" layoutY="164.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-radius: 60;" text="Retour">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.07" hue="-1.0" saturation="0.63" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TableView fx:id="table" layoutX="498.0" layoutY="366.0" prefHeight="284.0" prefWidth="331.0" style="-fx-background-radius: 25;">
+         <columns>
+            <TableColumn fx:id="date" prefWidth="164.0" text="Date" />
+            <TableColumn fx:id="time" prefWidth="164.0" text="Heure" />
+         </columns>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.2" hue="0.32" saturation="0.25" />
+         </effect>
+      </TableView>
+      <Button fx:id="supprimer" disable="true" layoutX="900.0" layoutY="474.0" mnemonicParsing="false" onAction="#supprimerDsiponibilite" prefHeight="59.0" prefWidth="116.0" style="-fx-background-radius: 60;" text="Supprimer">
+         <effect>
+            <ColorAdjust brightness="-0.2" contrast="0.27" hue="0.27" saturation="0.36" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TextField fx:id="recherche" layoutX="257.0" layoutY="490.0" prefHeight="51.0" prefWidth="210.0" style="-fx-background-radius: 25;" />
+      <Label layoutX="297.0" layoutY="429.0" text="Recherche">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <RadioButton fx:id="bydate" layoutX="381.0" layoutY="453.0" mnemonicParsing="false" onAction="#choice" text="Par Date">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="bytime" layoutX="383.0" layoutY="418.0" mnemonicParsing="false" onAction="#choice" text="Par Heure">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></RadioButton>
+      <ImageView fitHeight="150.0" fitWidth="331.0" layoutX="968.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/logo%20fitnes.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

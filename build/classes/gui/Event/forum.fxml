@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="page" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Event.ForumController">
+   <children>
+      <ImageView fitHeight="813.0" fitWidth="1364.0" layoutX="-9.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/Capture.PNG" />
+         </image>
+      </ImageView>
+      <Text fx:id="titre" fill="#84ffe2" layoutX="719.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forum" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="62.0" />
+         </font>
+      </Text>
+      <TableView fx:id="TableForum" layoutX="506.0" layoutY="240.0" prefHeight="328.0" prefWidth="650.0" style="-fx-background-color: #84ffe2; -fx-background-radius: 25;">
+        <columns>
+          <TableColumn fx:id="col_idCommentaire" prefWidth="185.0" text="idCommentaire" />
+          <TableColumn fx:id="col_categorie" prefWidth="238.0" text="Categorie" />
+            <TableColumn fx:id="col_message" prefWidth="251.0" text="Message" />
+        </columns>
+      </TableView>
+      <VBox layoutX="-7.0" prefHeight="807.0" prefWidth="322.0" style="-fx-background-color: teal;" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/272663429_433859438440666_3322388444377380140_n.png" />
+         </image>
+      </ImageView>
+      <Hyperlink fx:id="eventhyp" layoutX="20.0" layoutY="32.0" onAction="#event" prefHeight="52.0" prefWidth="239.0" text="EVENT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Coach.GestionCoachController">
+   <children>
+      <ImageView fitHeight="788.0" fitWidth="1304.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/Capture.PNG" />
+         </image>
+      </ImageView>
+      <Button fx:id="gestiondisponibilite" layoutX="42.0" layoutY="132.0" mnemonicParsing="false" onAction="#gestionDisponibilite" prefHeight="54.0" prefWidth="158.0" style="-fx-background-radius: 60;" text="Gerer Disponibilitées">
+         <effect>
+            <ColorAdjust brightness="0.02" contrast="-0.12" hue="0.78" saturation="0.7" />
+         </effect></Button>
+      <Button fx:id="gestiondemande" layoutX="37.0" layoutY="264.0" mnemonicParsing="false" onAction="#gestionDemandes" prefHeight="54.0" prefWidth="158.0" style="-fx-background-radius: 60;" text="Gerer Demandes">
+         <effect>
+            <ColorAdjust brightness="0.02" contrast="-0.12" hue="0.78" saturation="0.7" />
+         </effect></Button>
+      <Label layoutX="560.0" layoutY="148.0" prefHeight="54.0" prefWidth="177.0" text="Planning" textFill="#94f525">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font></Label>
+      <TableView fx:id="table" layoutX="383.0" layoutY="254.0" prefHeight="200.0" prefWidth="522.0" style="-fx-background-radius: 25;">
+         <columns>
+            <TableColumn fx:id="nom" prefWidth="176.0" text="nom prenom" />
+            <TableColumn fx:id="date" prefWidth="177.0" text="date" />
+            <TableColumn fx:id="heure" prefWidth="175.0" text="heure" />
+         </columns>
+         <effect>
+            <ColorAdjust contrast="0.1" hue="1.0" saturation="0.38" />
+         </effect>
+      </TableView>
+      <Button fx:id="anuller" layoutX="833.0" layoutY="509.0" mnemonicParsing="false" onAction="#annuler" prefHeight="65.0" prefWidth="158.0" style="-fx-background-radius: 60;" text="Annuler">
+         <effect>
+            <ColorAdjust brightness="0.02" contrast="-0.12" hue="0.78" saturation="0.7" />
+         </effect></Button>
+      <ImageView fitHeight="153.0" fitWidth="255.0" layoutX="1009.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/272663429_433859438440666_3322388444377380140_n.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="listeexercices" layoutX="37.0" layoutY="403.0" mnemonicParsing="false" onAction="#listeExercices" prefHeight="54.0" prefWidth="158.0" style="-fx-background-radius: 60;" text="Liste Exercices">
+         <effect>
+            <ColorAdjust brightness="0.02" contrast="-0.12" hue="0.78" saturation="0.7" />
+         </effect></Button>
+   </children>
+</AnchorPane>

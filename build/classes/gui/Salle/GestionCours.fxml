@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Salle.GestionCourController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="770.0" prefWidth="1292.0" style="-fx-background-color: #dfe6e9;">
+         <children>
+            <ImageView fitHeight="814.0" fitWidth="1329.0" layoutX="-12.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 60;">
+               <image>
+                  <Image url="@../Aziz/Capture.PNG" />
+               </image>
+            </ImageView>
+            <TableView fx:id="table" layoutX="440.0" layoutY="253.0" prefHeight="284.0" prefWidth="701.0" style="-fx-background-radius: 25;">
+               <columns>
+                  <TableColumn fx:id="nom" prefWidth="135.0" text="Nom Cour" />
+                  <TableColumn fx:id="date" prefWidth="94.0" text="Date" />
+                  <TableColumn fx:id="tCour" prefWidth="94.0" text="Heure" />
+                  <TableColumn fx:id="nbrTotal" minWidth="0.0" prefWidth="120.0" text="Nombre Total" />
+                  <TableColumn fx:id="nbrActuel" minWidth="0.0" prefWidth="120.0" text="Nombre Actuel" />
+                  <TableColumn fx:id="info" minWidth="0.0" prefWidth="136.0" text="Information" />
+               </columns>
+               <effect>
+                  <ColorAdjust contrast="0.05" hue="0.32" saturation="0.4" />
+               </effect>
+            </TableView>
+            <Button fx:id="add" layoutX="720.0" layoutY="581.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="58.0" prefWidth="140.0" style="-fx-background-radius: 60;" text="Ajouter">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="-0.12" contrast="0.4" hue="0.8" saturation="0.32" />
+               </effect>
+            </Button>
+            <Button fx:id="supprimer" disable="true" layoutX="367.0" layoutY="581.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="58.0" prefWidth="140.0" style="-fx-background-radius: 60;" text="Supprimer">
+               <effect>
+                  <ColorAdjust brightness="-0.12" contrast="0.4" hue="0.8" saturation="0.32" />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <TextField fx:id="recherche" layoutX="437.0" layoutY="181.0" prefHeight="51.0" prefWidth="223.0" style="-fx-background-radius: 60;" />
+            <Label layoutX="323.0" layoutY="186.0" text="Recherche">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Button fx:id="gest" layoutX="246.0" layoutY="322.0" mnemonicParsing="false" onAction="#GInt" prefHeight="58.0" prefWidth="155.0" style="-fx-background-radius: 60;" text="Gestion Interne">
+               <effect>
+                  <ColorAdjust brightness="-0.12" contrast="0.4" hue="0.8" saturation="0.32" />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <ImageView fitHeight="205.0" fitWidth="296.0" layoutX="993.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Aziz/logo%20fitnes.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

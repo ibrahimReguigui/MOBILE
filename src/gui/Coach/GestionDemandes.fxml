@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Coach.GestionDemandesController">
+   <children>
+      <ImageView fitHeight="798.0" fitWidth="1359.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/Capture.PNG" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table" layoutX="403.0" layoutY="189.0" prefHeight="265.0" prefWidth="531.0" style="-fx-background-radius: 25;">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="176.0" text="nom prenom" />
+            <TableColumn fx:id="date" prefWidth="177.0" text="date" />
+            <TableColumn fx:id="heure" prefWidth="175.0" text="heure" />
+        </columns>
+         <effect>
+            <ColorAdjust brightness="-0.07" contrast="0.05" hue="0.28" saturation="0.45" />
+         </effect>
+      </TableView>
+      <Button fx:id="refuser" disable="true" layoutX="725.0" layoutY="525.0" mnemonicParsing="false" onAction="#Refuser" prefHeight="58.0" prefWidth="112.0" style="-fx-background-radius: 60;" text="Refuser">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="0.07" contrast="0.02" hue="0.41" saturation="0.88" />
+         </effect></Button>
+      <Button fx:id="retour" layoutX="309.0" layoutY="525.0" mnemonicParsing="false" onAction="#Retour" prefHeight="58.0" prefWidth="118.0" style="-fx-background-radius: 60;" text="Retour">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="0.07" contrast="0.02" hue="0.41" saturation="0.88" />
+         </effect></Button>
+      <Button fx:id="accepter" disable="true" layoutX="879.0" layoutY="525.0" mnemonicParsing="false" onAction="#Accepter" prefHeight="58.0" prefWidth="112.0" style="-fx-background-radius: 60;" text="Accepter">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="0.07" contrast="0.02" hue="0.41" saturation="0.88" />
+         </effect></Button>
+      <ImageView fitHeight="150.0" fitWidth="300.0" layoutX="991.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/logo%20fitnes.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

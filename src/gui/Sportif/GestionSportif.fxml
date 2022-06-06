@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Sportif.GestionSportifController">
+   <children>
+      <ImageView fitHeight="928.0" fitWidth="1392.0" layoutX="-31.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/Capture.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="563.0" layoutY="86.0" prefHeight="83.0" prefWidth="261.0" text="Bienvenue" textFill="#eeff55">
+         <font>
+            <Font name="System Bold" size="46.0" />
+         </font></Label>
+      <Button fx:id="cours" layoutX="994.0" layoutY="130.0" mnemonicParsing="false" onAction="#listecours" prefHeight="62.0" prefWidth="91.0" style="-fx-background-radius: 60;" text="Cours">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.1" hue="1.0" saturation="0.25" />
+         </effect></Button>
+      <Button fx:id="coachs" layoutX="303.0" layoutY="137.0" mnemonicParsing="false" onAction="#listeCoachsDisponibilites" prefHeight="55.0" prefWidth="123.0" style="-fx-background-radius: 60;" text="Coachs">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.1" hue="1.0" saturation="0.25" />
+         </effect></Button>
+      <TableView fx:id="tablecoursalle" layoutX="281.0" layoutY="201.0" prefHeight="183.0" prefWidth="800.0" style="-fx-background-radius: 25;">
+         <columns>
+            <TableColumn fx:id="salle1" prefWidth="122.0" text="Salle" />
+            <TableColumn fx:id="nom" prefWidth="132.0" text="Nom Cour" />
+            <TableColumn fx:id="date" prefWidth="123.0" text="Date" />
+            <TableColumn fx:id="tCour" minWidth="0.0" prefWidth="111.0" text="Heure" />
+            <TableColumn fx:id="nbrActuel" minWidth="0.0" prefWidth="104.0" text="Nombre Actuel" />
+            <TableColumn fx:id="nbrTotal" minWidth="0.0" prefWidth="102.0" text="Nombre Total" />
+            <TableColumn fx:id="info" prefWidth="105.0" text="Information" />
+         </columns>
+         <effect>
+            <ColorAdjust saturation="0.2" />
+         </effect>
+      </TableView>
+      <Button fx:id="supprimerCour" disable="true" layoutX="935.0" layoutY="400.0" mnemonicParsing="false" onAction="#supprimerReservationCour" prefHeight="62.0" prefWidth="129.0" style="-fx-background-radius: 60;" text="Annuler">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.1" hue="1.0" saturation="0.25" />
+         </effect></Button>
+      <TableView fx:id="tablecourcoach" layoutX="399.0" layoutY="495.0" prefHeight="142.0" prefWidth="586.0" style="-fx-background-radius: 25;">
+         <columns>
+            <TableColumn fx:id="nomprenom" prefWidth="167.0" text="Coach" />
+            <TableColumn fx:id="date1" prefWidth="135.0" text="Date" />
+            <TableColumn fx:id="heure" prefWidth="162.0" text="Heure" />
+            <TableColumn fx:id="etat" prefWidth="121.0" text="Etat" />
+         </columns>
+         <effect>
+            <ColorAdjust saturation="0.2" />
+         </effect>
+      </TableView>
+      <Button fx:id="supprimerreservation" disable="true" layoutX="893.0" layoutY="655.0" mnemonicParsing="false" onAction="#annulerReservation" prefHeight="55.0" prefWidth="123.0" style="-fx-background-radius: 60;" text="Annuler">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.1" hue="1.0" saturation="0.25" />
+         </effect></Button>
+      <Button fx:id="com" layoutX="294.0" layoutY="406.0" mnemonicParsing="false" onAction="#review" prefHeight="62.0" prefWidth="164.0" style="-fx-background-radius: 60;" text="Commentaire">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.1" hue="1.0" saturation="0.25" />
+         </effect></Button>
+      <Button fx:id="besoin" layoutX="315.0" layoutY="655.0" mnemonicParsing="false" onAction="#Besoin" prefHeight="62.0" prefWidth="174.0" style="-fx-background-radius: 60;" text="Beasoin Nutrition">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="-0.15" contrast="0.1" hue="1.0" saturation="0.25" />
+         </effect></Button>
+      <ImageView fitHeight="126.0" fitWidth="287.0" layoutX="1053.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Aziz/logo%20fitnes.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

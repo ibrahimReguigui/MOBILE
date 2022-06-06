@@ -5,135 +5,138 @@
  */
 package entities;
 
-import com.codename1.ui.TextField;
-
-
-
-
-
+import java.sql.Date;
+import java.sql.Time;
 /**
  *
  * @author Asus
  */
 public class CourSalle {
-    private int salle,id,nbrActuel,nbrTotal;
-
-   
-    private String information,nomCour,tCour,date;
-
+    private int id,utilisateur_id,nbr_total,nbr_actuel ;
+    private String nom_cour,information,nom_salle;
+    private Date date;
+    private Time t_cour;
+    
     public CourSalle() {
     }
 
-    public CourSalle(String nomCour) {
-        this.nomCour = nomCour;
-    }
- public void setSalle(int salle) {
-        this.salle = salle;
-    }
-
-    public int getSalle() {
-        return salle;
-    }
-
-    public CourSalle(int salle, int id, int nbrActuel, int nbrTotal, String information, String nomCour, String tCour, String date) {
-        this.salle = salle;
-        this.id = id;
-        this.nbrActuel = nbrActuel;
-        this.nbrTotal = nbrTotal;
+    public CourSalle(int utilisateur_id, int nbr_total, int nbr_actuel, String nom_cour, String information, String nom_salle, Date date, Time t_cour) {
+        this.utilisateur_id = utilisateur_id;
+        this.nbr_total = nbr_total;
+        this.nbr_actuel = nbr_actuel;
+        this.nom_cour = nom_cour;
         this.information = information;
-        this.nomCour = nomCour;
-        this.tCour = tCour;
+        this.nom_salle = nom_salle;
         this.date = date;
-    }
-    public CourSalle(int id, int nbrActuel, int nbrTotal, String information, String nomCour) {
-        this.id = id;
-        this.nbrActuel = nbrActuel;
-        this.nbrTotal = nbrTotal;
-        this.information = information;
-        this.nomCour = nomCour;
+        this.t_cour = t_cour;
     }
 
-    public CourSalle(int nbrActuel, int nbrTotal, String information, String nomCour, String tCour, String date) {
-        this.nbrActuel = nbrActuel;
-        this.nbrTotal = nbrTotal;
+    public CourSalle(int nbr_total, int nbr_actuel, String nom_cour, String information, String nom_salle, Date date, Time t_cour) {
+        this.nbr_total = nbr_total;
+        this.nbr_actuel = nbr_actuel;
+        this.nom_cour = nom_cour;
         this.information = information;
-        this.nomCour = nomCour;
-        this.tCour = tCour;
+        this.nom_salle = nom_salle;
         this.date = date;
+        this.t_cour = t_cour;
     }
 
-    public CourSalle(int id, int nbrActuel, int nbrTotal, String date, String tCour, String information, String nomCour) {
-        this.id = id;
-        this.nbrActuel = nbrActuel;
-        this.nbrTotal = nbrTotal;
-        this.date = date;
-        this.tCour = tCour;
+    public CourSalle(int utilisateur_id, String nom_cour,Date date, Time t_cour, int nbr_total, String information) {
+        this.utilisateur_id = utilisateur_id;
+        this.nbr_total = nbr_total;
+        this.nbr_actuel = nbr_actuel;
+        this.nom_cour = nom_cour;
         this.information = information;
-        this.nomCour = nomCour;
+        this.date = date;
+        this.t_cour = t_cour;
     }
 
-    
+    public CourSalle(int utilisateur_id,  int nbr_total, String nom_cour, String information, Date date, Time t_cour) {
+        this.utilisateur_id = utilisateur_id;
+        this.nbr_total = nbr_total;
+        this.nom_cour = nom_cour;
+        this.information = information;
+        this.date = date;
+        this.t_cour = t_cour;
+    }
+
+    @Override
+    public String toString() {
+        return "CourSalle{" + "id=" + id + ", utilisateur_id=" + utilisateur_id +", nbr_total=" + nbr_total + ", nbr_actuel=" + nbr_actuel + ", nom_cour=" + nom_cour + ", information=" + information + ", date=" + date + ", t_cour=" + t_cour + '}';
+    }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setNbrActuel(int nbrActuel) {
-        this.nbrActuel = nbrActuel;
+    public void setUtilisateur_id(int utilisateur_id) {
+        this.utilisateur_id = utilisateur_id;
     }
 
-    public void setNbrTotal(int nbrTotal) {
-        this.nbrTotal = nbrTotal;
+
+    public void setNbr_total(int nbr_total) {
+        this.nbr_total = nbr_total;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setNbr_actuel(int nbr_actuel) {
+        this.nbr_actuel = nbr_actuel;
     }
 
-    public void settCour(String tCour) {
-        this.tCour = tCour;
+    public void setNom_cour(String nom_cour) {
+        this.nom_cour = nom_cour;
+    }
+
+    public void setNom_salle(String nom_salle) {
+        this.nom_salle = nom_salle;
+    }
+
+    public String getNom_salle() {
+        return nom_salle;
     }
 
     public void setInformation(String information) {
         this.information = information;
     }
 
-    public void setNomCour(String nomCour) {
-        this.nomCour = nomCour;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setT_cour(Time t_cour) {
+        this.t_cour = t_cour;
     }
 
     public int getId() {
         return id;
     }
 
-    public int getNbrActuel() {
-        return nbrActuel;
+    public int getUtilisateur_id() {
+        return utilisateur_id;
     }
 
-    public int getNbrTotal() {
-        return nbrTotal;
+  
+    public int getNbr_total() {
+        return nbr_total;
     }
 
-    public String getDate() {
-        return date;
+    public int getNbr_actuel() {
+        return nbr_actuel;
     }
 
-    public String gettCour() {
-        return tCour;
+    public String getNom_cour() {
+        return nom_cour;
     }
 
     public String getInformation() {
         return information;
     }
 
-    public String getNomCour() {
-        return nomCour;
-    }
-    
-    @Override
-    public String toString() {
-        return "CourSalle{" + "id=" + id + ", nbrActuel=" + nbrActuel + ", nbrTotal=" + nbrTotal + ", date=" + date + ", tCour=" + tCour + ", information=" + information + ", nomCour=" + nomCour + '}';
+    public Date getDate() {
+        return date;
     }
 
+    public Time getT_cour() {
+        return t_cour;
+    }
     
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="root1" prefHeight="600.0" prefWidth="950.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.Wejden.FXMLhomegerantController">
+   <children>
+      <AnchorPane layoutX="114.0" layoutY="45.0" prefHeight="429.0" prefWidth="708.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="619.0" fitWidth="950.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Capture.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="563.0" fitWidth="966.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0">
+               <image>
+                  <Image url="@Capture.PNG" />
+               </image>
+            </ImageView>
+            <Button layoutX="130.0" layoutY="220.0" mnemonicParsing="false" onAction="#gestioninterne" prefHeight="50.0" prefWidth="200.0" style="-fx-background-radius: 60;" text="Gestion Interne ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="130.0" layoutY="372.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-radius: 60;" text=" Gestion de Cours">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="408.0" layoutY="220.0" mnemonicParsing="false" onAction="#forum" prefHeight="50.0" prefWidth="200.0" style="-fx-background-radius: 60;" text="Forum">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="408.0" layoutY="381.0" mnemonicParsing="false" onAction="#event" prefHeight="50.0" prefWidth="200.0" style="-fx-background-radius: 60;" text="Event">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="93.0" layoutY="45.0" text="Home Gerant" textFill="#d0981e">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

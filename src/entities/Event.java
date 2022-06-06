@@ -4,91 +4,97 @@
  * and open the template in the editor.
  */
 package entities;
+//import java.util.Date;
 
+import java.sql.Date;
 
-
-/*
-
-id_evenement 
-
-nom 
-
-nbmax_participants 
-
-date_evenement 
-
-id_sponsor 
-
-description 
-
-image_event
 /**
  *
- * @author farah
+ * @author nahaw
  */
 public class Event {
-    private int idevent;
-    private int nbrplaces;
-    private String nomevent;
-    private String datedebut;
-    private String datefin;
+
+    private int idEvent;
+    private String nomEvent;
+    private Date DateDebut;
+    private Date DateFin;
+    private int nbrPlaces;
     private String location;
     private String img;
 
-    public Event(String nomevent) {
-        this.nomevent = nomevent;
+    public Event() {
+
     }
 
-    public int getIdevent() {
-        return idevent;
+    public Event(int idEvent, String nomEvent, Date DateDebut, Date DateFin, int nbrPlaces, String location, String img) {
+        this.idEvent = idEvent;
+        this.nomEvent = nomEvent;
+        this.DateDebut = DateDebut;
+        this.DateFin = DateFin;
+        this.nbrPlaces = nbrPlaces;
+        this.location = location;
+        this.img = img;
     }
 
-    public void setIdevent(int idevent) {
-        this.idevent = idevent;
+    public Event(String nomEvent, Date DateDebut, Date DateFin, int nbrPlaces, String location, String img) {
+        this.nomEvent = nomEvent;
+        this.DateDebut = DateDebut;
+        this.DateFin = DateFin;
+        this.nbrPlaces = nbrPlaces;
+        this.location = location;
+        this.img = img;
     }
 
-    public int getNbrplaces() {
-        return nbrplaces;
+    public int getIdEvent() {
+        return idEvent;
     }
 
-    public void setNbrplaces(int nbrplaces) {
-        this.nbrplaces = nbrplaces;
+    public String getNomEvent() {
+        return nomEvent;
     }
 
-    public String getNomevent() {
-        return nomevent;
+    public Date getDateDebut() {
+        return DateDebut;
     }
 
-    public void setNomevent(String nomevent) {
-        this.nomevent = nomevent;
+    public Date getDateFin() {
+        return DateFin;
     }
 
-    public String getDatedebut() {
-        return datedebut;
-    }
-
-    public void setDatedebut(String datedebut) {
-        this.datedebut = datedebut;
-    }
-
-    public String getNdatefin() {
-        return datefin;
-    }
-
-    public void setdatefin(String datefin) {
-        this.datefin = datefin;
+    public int getNbrPlaces() {
+        return nbrPlaces;
     }
 
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public String getImg() {
         return img;
+    }
+
+    public void setIdEvent(int id_event) {
+        this.idEvent = id_event;
+    }
+
+    public void setNomEvent(String nom_event) {
+        this.nomEvent = nom_event;
+    }
+
+    public void setDateDebut(Date DateDebut) {
+        this.DateDebut = DateDebut;
+    }
+
+    public void setDateFin(Date DateFin) {
+        this.DateFin = DateFin;
+    }
+
+    public void setNbrPlaces(int nbrPlaces) {
+        this.nbrPlaces = nbrPlaces;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public void setImg(String img) {
@@ -97,23 +103,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" + "idevent=" + idevent + ", nbrplaces=" + nbrplaces + ", nomevent=" + nomevent + ", datedebut=" + datedebut + ", datefin=" + datefin + ", location=" + location + ", img=" + img + '}';
+        return "Event{" + "idEvent=" + idEvent + ", nomEvent=" + nomEvent + ", DateDebut=" + DateDebut + ", DateFin=" + DateFin + ", nbrPlaces=" + nbrPlaces + ", location=" + location + ", img=" + img + '}';
     }
 
-    public Event(int nbrplaces, String nomevent, String datedebut, String datefin, String location, String img) {
-        this.nbrplaces = nbrplaces;
-        this.nomevent = nomevent;
-        this.datedebut = datedebut;
-        this.datefin = datefin;
-        this.location = location;
-        this.img = img;
-    }
-
-    public Event() {
-    }
-    
-
-   
-
-   
 }
